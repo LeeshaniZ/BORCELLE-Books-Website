@@ -21,3 +21,8 @@ The exact setup depends on the scripts and configuration files in each directory
 ## Development notes
 
 Before deploying, document the database schema, required environment variables, installation commands, and any payment or authentication integrations that are actually implemented.
+
+
+## Repository completeness notes
+
+The current tracked backend files are not a complete runnable PHP application: `Backend/config.php` requires `Backend/classes/DBConnection.php` and `Backend/classes/SystemSettings.php`, but those class files are not present in the repository tree. A fresh clone will need the missing classes and a configured MySQL database before the backend can run. The current local database settings in `Backend/initialize.php` are development defaults; replace them with environment-based configuration before any deployment, and do not expose default developer accounts on a public server.
